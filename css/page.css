@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* html{
+    font-family: ;
+    font-size: ;
+} */
+
+body {
+    /* background-color: ; */
+}
+
+/* @font-face {
+    font-family: ;
+    src: url();
+} */
+/**/
+.page {
+    margin: 0 auto;
+    display: grid;
+    grid-template: 'header'
+        'main'
+        'footer';
+    row-gap: 5px;
+}
+
+.page-header {
+    grid-area: header;
+}
+
+.page-main {
+    grid-area: main;
+}
+
+.page-footer {
+    grid-area: footer;
+}
