@@ -9,9 +9,9 @@
     font-size: ;
 } */
 
-body {
-    /* background-color: ; */
-}
+/* body {
+    background-color: ;
+} */
 
 /* @font-face {
     font-family: ;
@@ -24,7 +24,6 @@ body {
     grid-template: 'header'
         'main'
         'footer';
-    row-gap: 5px;
 }
 
 .page-header {
