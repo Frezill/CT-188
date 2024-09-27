@@ -1,4 +1,131 @@
-.header-container {
-    min-height: 7vh;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 10vh;
+    background-color: #00215E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+}
+
+.header .header__logo img {
+    width: 90px;
+    cursor: pointer;
+}
+
+.header .header__navigate-bar {
+    display: flex;
+    gap: 2vw;
+    list-style: none;
+    color: white;
+    font-weight: 500;
+    height: 100%;
+}
+
+.header__navigate-bar li {
+    display: flex;
+    align-items: center;
+}
+
+.header__navigate-bar a {
+    font-size: min(1.7vw, 25px);
+    color: inherit;
+}
+
+.header__navigate-bar .active {
+    padding: 0 1vw;
+    background-color: #2C4E80;
+    font-weight: 600;
+}
+
+.header .header__search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header__search-bar input {
+    width: 15vw;
+    height: 3vh;
+    padding: 8px 5px;
+    border-radius: 8px;
+    background-color: #f8f3e9;
+    border: none;
+}
+
+.header .header__search-icon {
+    position: absolute;
+    right: 0;
+    margin-right: 0.8vw;
+    font-size: min(3.7vw, 20px);
+    cursor: pointer;
+}
+
+.header .header__menu-icon {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 3vw;
+}
+
+.header .header__dropdown-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    position: absolute;
+    right: 1vw;
+    top: 5vh;
+    width: 25vw;
+    border-radius: 10px;
+    background-color: rgba(45, 52, 54, 0.95);
+    list-style: none;
+    padding: 2vw 1vw;
+}
+
+.header__dropdown-menu.open {
+    display: flex;
+}
+
+.header__dropdown-menu li {
+    width: 100%;
+    padding: 0.4vw 1vw;
+    border-radius: 6px;
+}
+
+.header__dropdown-menu a {
+    color: white;
+    font-weight: 600;
+    font-size: min(2.3vw, 25px);
+}
+
+.header__dropdown-menu .active {
     background-color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 7vh;
+        padding: 0 7vw;
+    }
+
+    .header .header__logo img {
+        width: 60px;
+    }
+
+    .header .header__navigate-bar {
+        display: none;
+    }
+
+    .header__search-bar input {
+        width: 40vw;
+    }
+
+    .header .header__menu-icon {
+        display: block;
+    }
 }
