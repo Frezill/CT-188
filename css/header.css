@@ -5,7 +5,7 @@
 
 .header {
     height: 10vh;
-    background-color: #00215E;
+    background-color: var(--third-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +19,7 @@
 
 .header .header__navigate-bar {
     display: flex;
-    color: white;
+    color: var(--primary-font-color);
     font-weight: 500;
     height: 100%;
 }
@@ -76,7 +76,7 @@
 .header .header__menu-icon {
     display: none;
     cursor: pointer;
-    color: white;
+    color: var(--primary-font-color);
     font-size: max(3vw, 18px);
 }
 
@@ -105,7 +105,7 @@
 }
 
 .header__dropdown-menu a {
-    color: white;
+    color: var(--primary-font-color);
     font-weight: 600;
     font-size: min(2.3vw, 25px);
 }
