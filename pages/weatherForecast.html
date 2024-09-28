@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="../js/weatherForecast.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/page.css">
     <link rel="stylesheet" href="../css/weatherForecast.css">
     <title>Can Tho Travel</title>
@@ -13,10 +16,136 @@
 
 <body class="page">
     <header class="page-header" id="header"></header>
-    <main class="page-main hotel">
-        weather forecast
+    <main class="page-main weather-forecast">
+        <div class="weather-forecast__left-content">
+            <div class="weather-forecast__now-infor card">
+                <h2>Now</h2>
+                <div class="weather-forecast__now-infor--detail ">
+                    <p>30.0&deg;C</p>
+                    <img src="//cdn.weatherapi.com/weather/128x128/night/116.png" alt="">
+                </div>
+                <hr>
+                <div class="weather-forecast__now-infor--text">
+                    <i class="far fa-calendar"></i>
+                    <i class="date">Friday, 2024/09/28</i>
+                </div>
+                <div class="weather-forecast__now-infor--text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <i class="location">Can Tho, Viet Nam</i>
+                </div>
+            </div>
+            <div class="weather-forecast__forecast-infor card">
+                <h2>Forecast by day</h2>
+
+            </div>
+        </div>
+        <div class="weather-forecast__right-content">
+            <h2>Today's Highlights</h2>
+            <div class="right-top__content">
+                <div class="air-quality card">
+                    <div class="card-head">
+                        <p>Air quality (μg/m³)</p>
+                        <div class="air-quality__status">Good</div>
+                    </div>
+                    <div class="air-quality__wrap">
+                        <div class="air-quality__item">
+                            <p>CO</p>
+                            <h2 class="co">54</h2>
+                        </div>
+                        <div class="air-quality__item">
+                            <p>NO2</p>
+                            <h2 class="no2">54</h2>
+                        </div>
+                        <div class="air-quality__item">
+                            <p>O3</p>
+                            <h2 class="o3">54</h2>
+                        </div>
+                        <div class="air-quality__item">
+                            <p>SO2</p>
+                            <h2 class="so2">54</h2>
+                        </div>
+                        <div class="air-quality__item">
+                            <p>PM2.5</p>
+                            <h2 class="pm2_5">54</h2>
+                        </div>
+                        <div class="air-quality__item">
+                            <p>PM10</p>
+                            <h2 class="pm10">54</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="sun-action card">
+                    <div class="card-head">
+                        <p>Sunrise & Sunset</p>
+                    </div>
+                    <div class="sun-card__wrap">
+                        <div class="sun__item">
+                            <div class="sun__item-image">
+                                <img src="../images/weatherForecast/sunrise.png" alt="">
+                            </div>
+                            <div class="sun__item-infor">
+                                <p>Sunrise</p>
+                                <h3 class="sunrise">5:00:00</h3>
+                            </div>
+                        </div>
+                        <div class="sun__item">
+                            <div class="sun__item-image">
+                                <img src="../images/weatherForecast/sunset.png" alt="">
+                            </div>
+                            <div class="sun__item-infor">
+                                <p>Sunset</p>
+                                <h3 class="sunset">5:00:00</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-mid__content">
+                <div class="weather-forecast__property card">
+                    <div class="card-head">
+                        <p>Humidity</p>
+                    </div>
+                    <div class="property__item">
+                        <i class="fas fa-tint"></i>
+                        <h2 id="humidityVal">___</h2>
+                    </div>
+                </div>
+                <div class="weather-forecast__property card">
+                    <div class="card-head">
+                        <p>UV</p>
+                    </div>
+                    <div class="property__item">
+                        <i class="far fa-sun"></i>
+                        <h2 id="uvVal">___</h2>
+                    </div>
+                </div>
+                <div class="weather-forecast__property card">
+                    <div class="card-head">
+                        <p>Win Speed</p>
+                    </div>
+                    <div class="property__item">
+                        <i class="fas fa-wind"></i>
+                        <h2 id="winVal">___</h2>
+                    </div>
+                </div>
+                <div class="weather-forecast__property card">
+                    <div class="card-head">
+                        <p>Feels Like</p>
+                    </div>
+                    <div class="property__item">
+                        <i class="fas fa-temperature-low"></i>
+                        <h2 id="temperatureVal">___</h2>
+                    </div>
+                </div>
+            </div>
+            <h2>Today at</h2>
+            <div class="right-bottom__content">
+
+            </div>
+        </div>
+
     </main>
-    <footer class="page-footer" id="footer"></footer>
+    <footer class=" page-footer" id="footer"></footer>
 </body>
 
 </html>
