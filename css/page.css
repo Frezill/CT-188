@@ -1,29 +1,37 @@
+:root {
+    --primary-color: #ffc837;
+    --second-color: #00d15e;
+    --border-color: #1e1d23;
+    --primary-font-color: #fd8d03;
+    --second-font-color: #009F75;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
 }
 
-/* html{
-    font-family: ;
-} */
-
-/* body {
-    background-color: ;
-} */
-
-/* @font-face {
-    font-family: ;
-    src: url();
-} */
-/**/
 .page {
     display: grid;
-    grid-template: 'header'
+    grid-template:
+        'header'
         'main'
         'footer';
 }
