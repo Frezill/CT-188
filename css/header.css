@@ -4,7 +4,10 @@
 }
 
 .header {
+    position: fixed;
+    width: 100vw;
     height: 10vh;
+    z-index: 1;
     background-color: var(--third-color);
     display: flex;
     justify-content: space-between;
@@ -13,7 +16,7 @@
 }
 
 .header .header__logo img {
-    width: 90px;
+    width: 70px;
     cursor: pointer;
 }
 
