@@ -137,16 +137,18 @@
 }
 
 .left__place-name {
-    font-size: 2em;
+    font-size: min(2em, 2vw);
     font-weight: 600;
 }
 
 .left__place-detail {
     text-align: justify;
+    font-size: min(1em, 1.1vw);
 }
 
 .left__place-address {
     margin-top: 1vh;
+    font-size: min(1em, 1.1vw);
 }
 
 .exit-icon {
@@ -249,8 +251,13 @@
         color: black;
         margin: 0;
     }
-    .left__place-address {
+    .left__place-name {
+        font-size: 2em;
+    }
+    .left__place-address,
+    .left__place-detail {
         margin-top: 0;
+        font-size: 1em;
     }
     
     .exit-icon {
