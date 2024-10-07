@@ -4,10 +4,7 @@
 }
 
 .header {
-    position: fixed;
-    width: 100vw;
     height: 10vh;
-    z-index: 1;
     background-color: var(--third-color);
     display: flex;
     justify-content: space-between;

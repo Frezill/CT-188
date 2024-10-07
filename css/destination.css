@@ -15,9 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     height: 90vh;
-    margin-top: 10vh;
     background-image: url(/images/destination/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -112,7 +110,6 @@
     z-index: 3;
     height: 70vh;
     width: 80vw;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
     scale: 0;
     transition: scale 0.3s;
 }
@@ -127,6 +124,7 @@
     height: 100%;
     width: 75%;
     background-size: cover;
+    background-position: center;
 }
 
 .left__place-name,
@@ -162,6 +160,18 @@
 .exit-icon:hover {
     cursor: pointer;
     opacity: 0.5;
+}
+
+/* third - intro */
+
+.destination__intro {
+    width: 100%;
+    aspect-ratio: 3/1;
+    background-image: url(/images/destination/intro-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(70%);
 }
 
 @media (max-width: 1200px) {
