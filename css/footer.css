@@ -41,12 +41,6 @@
     color: #BD9300;
 }
 
-.footer__sign-up p {
-    font-size: max(1vw, 12px);
-    color: #2d3436;
-    text-align: justify;
-}
-
 .footer__sign-up input {
     height: 3vh;
     padding: 1vw 1vw;
