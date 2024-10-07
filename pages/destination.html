@@ -4,19 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="../js/destination.js"></script>
     <link rel="stylesheet" href="../css/page.css">
     <link rel="stylesheet" href="../css/destination.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Can Tho Travel</title>
 </head>
 
 <body class="page">
     <header class="page-header" id="header"></header>
     <main class="page-main destination">
-        destination
+        <div class="destination__banner">
+            <div class="banner__caption">Places to go</div>
+        </div>
+        <div class="destination__menu">
+            <div class="des-menu__title">DESTINATION</div>
+            <div class="des-menu__intro">
+                Each place exudes its own distinct character.<br>Get a feel for Can Tho's fascinating in these interactive tours.
+            </div>
+            <div class="des-menu__list">
+                <div class="menu-list__item" onclick="fadeIn(1)">
+                    <img src="/images/destination/place1-thumb.png" alt="" class="item__thumbnail">
+                    <div class="item__name">Cai Rang<br>Floating Market</div>
+                </div>
+                <div class="menu-list__item" onclick="fadeIn(2)">
+                    <img src="/images/destination/place2-thumb.png" alt="" class="item__thumbnail">
+                    <div class="item__name">Ninh Kieu Wharf</div>
+                </div>
+                <div class="menu-list__item" onclick="fadeIn(3)">
+                    <img src="/images/destination/place3-thumb.png" alt="" class="item__thumbnail">
+                    <div class="item__name">Binh Thuy<br>Ancient House</div>
+                </div>
+                <div class="menu-list__item" onclick="fadeIn(4)">
+                    <img src="/images/destination/place4-thumb.png" alt="" class="item__thumbnail">
+                    <div class="item__name">My Khanh<br>Tourist Village</div>
+                </div>
+            </div>
+        </div>
+        <div class="destination__place" id="background">
+            <div class="des__place-container" id="place1">
+                <div class="place-container__left">
+                    <div class="left__place-name">Cai Rang Floating Market</div>
+                    <div class="left__place-detail">
+                        Cai Rang floating market is one of the most famous and biggest floating markets in the Mekong Delta. 
+                        It is also a living museum of the southern traditional culture that has been fostered by the Mekong 
+                        Delta’s interlacing waterway systems. The market is on the Cai Rang river. It is five kilometers by 
+                        road from the centre of Can Tho. It is a wholesale market, selling fruits, vegetables and other 
+                        agricultural divroducts from Can Tho city as well as from 13 neighboring divrovinces in the Mekong 
+                        Delta region.
+                    </div>
+                    <div class="left__place-address">
+                        <strong>Address:</strong> Cai Rang Bridge, Cai Rang District, Can Tho City.
+                    </div>
+                </div>
+                <div class="place-container__right" id="img1">
+                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(1)"></i>
+                </div>
+            </div>
+            <div class="des__place-container" id="place2">
+                <div class="place-container__left">
+                    <div class="left__place-name">Ninh Kieu Wharf</div>
+                    <div class="left__place-detail">
+                        It is about 500 meters from the center. Ninh Kieu Park is large and spacious, planted with many beautiful 
+                        ornamental trees, the highlight of green grass growing and weaving among white cement panels and the 
+                        statue of Uncle Ho with 7.2m high bronze. It is the center park for mental and physical activities of local 
+                        people. There are some side spots around like night markets, old markets, floating restaurants, plenty of 
+                        restaurants and sky bars, hotels, local shops, convenience stores and even the travel agents.
+                    </div>
+                    <div class="left__place-address">
+                        <strong>Address:</strong> Hai Ba Trung Street, Tan An Ward, Ninh Kieu District, Can Tho City.
+                    </div>
+                </div>
+                <div class="place-container__right">
+                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(2)"></i>
+                </div>
+            </div>
+            <div class="des__place-container" id="place3">
+                <div class="place-container__left">
+                    <div class="left__place-name">Binh Thuy Ancient House</div>
+                    <div class="left__place-detail">
+                        The Binh Thuy French - style house, the privately owned house, was built in 1870 by the Duong family and still 
+                        managed by the eighth generation. The house was famously used in the 1992 movie “L’Amant” (“The Lover”) based 
+                        on the novel of the same name by French author Marguerite Duras, directed by Jean Jacques Annaud, telling the 
+                        story of a young Marguerite Duras and her lover Huynh Thuy Le, set during Indochina times.
+                    </div>
+                    <div class="left__place-address">
+                        <strong>Address:</strong> 144 Bui Huu Nghia Street, Binh Thuy District, Can Tho City.
+                    </div>
+                </div>
+                <div class="place-container__right">
+                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(3)"></i>
+                </div>
+            </div>
+            <div class="des__place-container" id="place4">
+                <div class="place-container__left">
+                    <div class="left__place-name">My Khanh Tourist Village</div>
+                    <div class="left__place-detail">
+                        Visiting My Khanh Tourist Village, visitors in Vietnam can experience the old days of southern life by taking on 
+                        the costume (rental service) of a rich landlord who lived in a big house or of a normal traditional farmer to feel 
+                        the difference. As a rich landlord, you can enjoy fruit, hot tea and listen to music from a hand-operated gramophone 
+                        made more than 300 years ago. As a farmer, you are given the opportunity to work and prepare meals as southern 
+                        farmers did in the past.
+                    </div>
+                    <div class="left__place-address">
+                        <strong>Address:</strong> 335 Lo Vong Cung Street, Phong Dien District, Can Tho City.
+                    </div>
+                </div>
+                <div class="place-container__right">
+                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(4)"></i>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="page-footer" id="footer"></footer>
 </body>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../js/destination.js"></script>
 </html>
