@@ -9,18 +9,17 @@
     --global-font: "MTD-Red-Bright";
 }
 
-/* first - banner */
+/* first: banner */
 
 .destination__banner {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     height: 90vh;
-    margin-top: 10vh;
     background-image: url(/images/destination/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
+    filter: grayscale(70%);
 }
 
 .banner__caption {
@@ -30,15 +29,14 @@
     text-shadow: 1px 1px 12px black;
 }
 
-/* second - menu */
+/* second: menu and place*/
 
 .destination__menu {
-    width: 100%;
-    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5vh auto;
+    justify-content: space-between;
+    margin-top: 2em;
 }
 
 .des-menu__title {
@@ -48,30 +46,30 @@
 }
 
 .des-menu__intro {
-    width: 25%;
     color: #333;
     text-align: center;
     line-height: 1.5;
 }
 
 .des-menu__list {
-    width: 100%;
-    height: 75%;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    margin-top: 1em;
+}
+.break {
+    flex-basis: 100vw;
+    height: 0;
 }
 
 .menu-list__item {
-    height: 100%;
+    height: 35vh;
     aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 1em;
-    transition: all 0.2s;
+    margin: 1em;
+    flex-basis: 5;
+    transition: scale 0.2s;
 }
 
 .item__thumbnail {
@@ -95,24 +93,25 @@
 }
 
 .destination__place {
-    display: none;
     position: fixed;
     top: 0;
     z-index: 2;
     height: 100vh;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
+    scale: 0;
 }
 
 .des__place-container {
-    display: none;
+    display: flex;
     position: fixed;
     top: 15vh;
     left: 10vw;
     z-index: 3;
     height: 70vh;
     width: 80vw;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+    scale: 0;
+    transition: scale 0.3s;
 }
 
 .place-container__left {
@@ -125,6 +124,7 @@
     height: 100%;
     width: 75%;
     background-size: cover;
+    background-position: center;
 }
 
 .left__place-name,
@@ -136,16 +136,18 @@
 }
 
 .left__place-name {
-    font-size: 2em;
+    font-size: min(2em, 2vw);
     font-weight: 600;
 }
 
 .left__place-detail {
     text-align: justify;
+    font-size: min(1em, 1.1vw);
 }
 
 .left__place-address {
     margin-top: 1vh;
+    font-size: min(1em, 1.1vw);
 }
 
 .exit-icon {
@@ -162,16 +164,77 @@
     opacity: 0.5;
 }
 
+/* break */
+
+.destination__text-break {
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 2em;
+}
+
+.destination__img-break {
+    width: 100%;
+    aspect-ratio: 3/1;
+    background-image: url(/images/destination/page-break.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    filter: grayscale(70%);
+}
+
+/* third: over view */
+
+.destination__over-view {
+    width: 80vw;
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.over-view__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+    color: #333;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.content__title {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.content__detail {
+    font-size: 1.2em;
+}
+
+@media (max-width: 1200px) {
+    .menu-list__item {
+        width: 35%;
+        height: auto;
+    }
+    .break {
+        flex-basis: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .destination__banner {
         height: 94vh;
-        margin-top: 7vh;
-        margin-bottom: 3vh;
         background-position: 20% 0%;
     }
 
     .banner__caption {
         font-size: 25vw;
+        transition: none;
+    }
+
+    .banner__caption:hover {
+        font-size: 25vw;
+        transition: none;
     }
 
     .destination__menu {
@@ -179,34 +242,40 @@
     }
 
     .destination__place {
-        display: block;
         position: static;
         height: auto;
         width: 95%;
         margin: auto;
         background: #fff;
+        scale: 1 !important;
     }
 
     .des__place-container {
-        display: flex;
         flex-direction: column;
         position: static;
         width: 100%;
-        height: 75vh;
+        height: auto;
         box-shadow: none;
+        margin: 2em auto;
+        scale: 1 !important;
+        transition: none;
     }
 
     .place-container__left {
         background: #fff;
         backdrop-filter: unset;
-        height: auto;
         width: 100%;
+        height: auto;
     }
     
     .place-container__right {
-        height: 65%;
         width: 100%;
+        height: 48vh;
         background-position: center;
+    }
+
+    .exit-icon {
+        display: none !important;
     }
     
     .left__place-name,
@@ -215,11 +284,20 @@
         color: black;
         margin: 0;
     }
-    .left__place-address {
-        margin-top: 0;
+    .left__place-name {
+        font-size: 2em;
+    }
+    .left__place-address,
+    .left__place-detail {
+        font-size: 1em;
     }
     
     .exit-icon {
         display: none;
+    }
+
+    .destination__over-view {
+        flex-direction: column;
+        width: 90vw;
     }
 }
