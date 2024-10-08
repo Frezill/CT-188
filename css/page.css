@@ -45,6 +45,8 @@ a {
 
 .page-header {
     grid-area: header;
+    position: sticky;
+    top: 0;
 }
 
 .page-main {

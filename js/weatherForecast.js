@@ -4,13 +4,15 @@ $(function () {
 });
 
 let API_KEY = '06e9d8f5e9eb4e74a0f82423242809';
+//API will expired in 13/10/2024
+//get new API key here: https://www.weatherapi.com/
 
 const fetchWeather = async (city) => {
     const API = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=5&aqi=yes&alerts=yes`;
 
     fetch(API).then((response) => {
         if (!response.ok) {
-            alert("No weather found.");
+            alert(`No weather found in ${city}`);
             throw new Error("No weather found.");
         }
         return response.json();
@@ -33,6 +35,7 @@ const displayWeather = (data) => {
 
     //display forecast by day card
     const forecastDay = forecast.forecastday;
+    $(".weather-forecast__forecast-infor--detail").remove();
     forecastDay.map((item) => {
         $(".weather-forecast__forecast-infor").append(`
             <div class="weather-forecast__forecast-infor--detail">
@@ -81,6 +84,7 @@ const displayWeather = (data) => {
     $(".property__item #temperatureVal").html(`${current?.feelslike_c}&deg;C`)
 
     //display by hour
+    $(".hourly-forecast").remove();
     const hourForecast = forecast?.forecastday[0]?.hour;
     for (let i = 0; i < 24; i += 3) {
         $(".right-bottom__content").append(`
@@ -91,8 +95,30 @@ const displayWeather = (data) => {
             </div>
         `)
     }
-
-
 }
 
 fetchWeather('Can Tho')
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    document
+        .querySelector(".weather-forecast__search--button")
+        .addEventListener("click", function () {
+            const searchValue = document.querySelector(".weather-forecast__search--input").value;
+            if (searchValue) {
+                fetchWeather(searchValue);
+                document.querySelector('.weather-forecast__search--input').value = ''
+            }
+        });
+
+    document
+        .querySelector(".weather-forecast__search--input")
+        .addEventListener("keyup", function (event) {
+            const searchValue = document.querySelector(".weather-forecast__search--input").value;
+            if (event.key == "Enter" && searchValue) {
+                fetchWeather(searchValue);
+                document.querySelector('.weather-forecast__search--input').value = '';
+            }
+        });
+
+});

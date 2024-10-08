@@ -4,6 +4,7 @@
 }
 
 .header {
+    width: 100vw;
     height: 10vh;
     background-color: var(--third-color);
     display: flex;
@@ -13,8 +14,9 @@
 }
 
 .header .header__logo img {
-    width: 70px;
+    width: 80px;
     cursor: pointer;
+    align-items: center;
 }
 
 .header .header__navigate-bar {
