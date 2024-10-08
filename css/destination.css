@@ -9,7 +9,7 @@
     --global-font: "MTD-Red-Bright";
 }
 
-/* first - banner */
+/* first: banner */
 
 .destination__banner {
     display: flex;
@@ -27,17 +27,16 @@
     font-family: var(--global-font);
     font-size: 10em;
     text-shadow: 1px 1px 12px black;
-    transition: all 0.3s;
 }
 
-/* second - menu */
+/* second: menu and place*/
 
 .destination__menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 5vh auto;
+    margin-top: 2em;
 }
 
 .des-menu__title {
@@ -165,18 +164,52 @@
     opacity: 0.5;
 }
 
-/* third - intro */
+/* break */
 
-.destination__intro {
+.destination__text-break {
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 2em;
+}
+
+.destination__img-break {
     width: 100%;
     aspect-ratio: 3/1;
-    background-image: url(/images/destination/intro-bg.png);
+    background-image: url(/images/destination/page-break.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     filter: grayscale(70%);
 }
 
+/* third: over view */
+
+.destination__over-view {
+    width: 80vw;
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.over-view__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+    color: #333;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.content__title {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.content__detail {
+    font-size: 1.2em;
+}
 
 @media (max-width: 1200px) {
     .menu-list__item {
@@ -261,5 +294,10 @@
     
     .exit-icon {
         display: none;
+    }
+
+    .destination__over-view {
+        flex-direction: column;
+        width: 90vw;
     }
 }
