@@ -86,7 +86,7 @@
     position: absolute;
     color: var(--primary-font-color);
     font-family: var(--global-font);
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
     text-shadow: 1px 1px 5px black;
 }
