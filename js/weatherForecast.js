@@ -58,6 +58,10 @@ const displayWeather = (data) => {
     const name = 'gb-defra-index'
     let airQualityLevel = airQuality[name];
 
+    $('.air-quality__status').removeClass('level-1');
+    $('.air-quality__status').removeClass('level-2');
+    $('.air-quality__status').removeClass('level-3');
+    $('.air-quality__status').removeClass('level-4');
     if (airQualityLevel <= 3) {
         $('.air-quality__status').addClass('level-1')
         $('.air-quality__status').html('GOOD')
