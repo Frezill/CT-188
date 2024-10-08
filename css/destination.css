@@ -7,6 +7,7 @@
 
 :root {
     --global-font: "MTD-Red-Bright";
+    --global-font-color: #333;
 }
 
 /* first: banner */
@@ -45,13 +46,13 @@
 }
 
 .des-menu__title {
-    color: #fff;
+    color: var(--primary-font-color);
     font-size: 3em;
     font-weight: 600;
 }
 
 .des-menu__detail {
-    color: #fff;
+    color: var(--primary-font-color);
     text-align: center;
     line-height: 1.5;
 }
@@ -69,10 +70,11 @@
 .menu-list__item {
     height: 30vh;
     aspect-ratio: 1/1;
+    margin: 1em;
+    border: 1px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1em;
     flex-basis: 5;
     transition: scale 0.2s;
 }
@@ -139,7 +141,7 @@
 .left__place-detail,
 .left__place-address {
     margin: auto 1vw;
-    color: #333;
+    color: var(--global-font-color);
     line-height: 1.6;
 }
 
@@ -270,7 +272,6 @@
         height: auto;
         margin: 2em auto;
         box-shadow: none;
-        border: none;
         scale: 1 !important;
         transition: none;
     }
@@ -295,7 +296,7 @@
     .left__place-name,
     .left__place-detail,
     .left__place-address {
-        color: black;
+        color: var(--global-font-color);
         margin: 0;
     }
     .left__place-name {
@@ -327,9 +328,13 @@
         margin: 2em auto;
     }
 
-    .content__title,
+    .content__title {
+        color: var(--global-font-color);
+        font-size: 1.5em;
+    }
     .content__detail {
-        color: black;
+        color: var(--global-font-color);
+        font-size: 1em;
     }
 
 }
