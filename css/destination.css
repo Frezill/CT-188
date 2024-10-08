@@ -112,7 +112,6 @@
     position: fixed;
     top: 15vh;
     left: 10vw;
-    z-index: 3;
     height: 70vh;
     width: 80vw;
     scale: 0;
