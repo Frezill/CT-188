@@ -4,7 +4,7 @@ $(function () {
 });
 
 for(let i = 1; i <= 6; i++)
-    document.getElementsByClassName("place-container__right")[i-1].style.backgroundImage = `url(/images/destination/place${i}.png)`;
+    document.getElementsByClassName("place-container__right")[i-1].style.backgroundImage = `url(../images/destination/main-places/place-${i}.png)`;
 
 function fadeIn (placeNumber) {
     document.getElementById("background").style.scale = "1";

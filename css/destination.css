@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MTD-Red-Bright";
-    src: url(/images/destination/banner-font.ttf);
+    src: url(../images/destination/banner-font.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background-image: url(/images/destination/banner.png);
+    background-image: url(../images/destination/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -32,7 +32,7 @@
 /* second: menu and place*/
 
 .destination__main {
-    background-image: url(/images/destination/under.png);
+    background-image: url(../images/destination/under.png);
     background-size: cover;
     margin: 3vh auto;
 }
@@ -75,15 +75,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 5;
-    transition: scale 0.2s;
+    transition: scale 0.5s;
 }
 
 .item__thumbnail {
-    width: 100%;
     height: 100%;
     filter: grayscale(70%);
-    transition: all 0.2s;
+    transition: all 0.5s;
 }
 
 .item__name {
@@ -132,7 +130,7 @@
 }
 
 .place-container__left {
-    background-image: url(/images/destination/text-bg.png);
+    background-image: url(../images/destination/text-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -182,7 +180,7 @@
 .destination__img-break {
     aspect-ratio: 4/1;
     margin: 0 10em;
-    background-image: url(/images/destination/page-break.png);
+    background-image: url(../images/destination/page-break.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -232,11 +230,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--four-color);
+    background-image: url(../images/destination/nearby-places/nearby-place-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }
 
 .np-container__title {
-    color: var(--primary-font-color);
+    color: var(--primary-color);
     font-size: 3em;
     font-weight: 600;
     padding-bottom: 2vh;
@@ -246,25 +247,24 @@
     display: grid;
     grid-template-columns: 18vw 18vw 18vw;
     grid-template-rows: 18vw 18vw;
-    grid-gap: 1em;
+    /* grid-gap: 1em; */
 }
 
 .grid__item {
-    transition: all 1s;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #fff;
     overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.grid__item--thumbnail {
+    align-self: stretch;
 }
 
 .grid__item > p {
     font-size: 5em;
     cursor: default;
-}
-
-.grid__item--thumbnail {
-    transition: all 0.5s;
 }
 
 .grid__item--1 {
@@ -293,11 +293,17 @@
 
 @media (max-width: 1200px) {
     .menu-list__item {
-        width: 35%;
+        width: 35vw;
         height: auto;
     }
+
     .break {
         flex-basis: 0;
+    }
+
+    .np-container__grid {
+        grid-template-columns: 25vw 25vw 25vw;
+        grid-template-rows: 25vw 25vw;
     }
 }
 
@@ -318,28 +324,18 @@
 
     .banner__caption:hover {
         font-size: 25vw;
-        transition: none;
     }
 
     .destination__menu {
         display: none;
     }
 
-    .destination__place {
-        position: static;
-        height: auto;
-        width: 95%;
-        margin: auto;
-        background: #fff;
-        scale: 1 !important;
-    }
-
     .des__place-container {
         flex-direction: column;
         position: static;
-        width: 100%;
+        width: 95vw;
         height: auto;
-        margin: 2em auto;
+        margin: 2vh auto;
         box-shadow: none;
         scale: 1 !important;
         transition: none;
@@ -371,10 +367,6 @@
     .left__place-detail {
         font-size: 1em;
     }
-    
-    .exit-icon {
-        display: none;
-    }
 
     .destination__img-break {
         width: 100%;
@@ -389,17 +381,43 @@
 
     .destination__over-view {
         flex-direction: column;
-        width: 90vw;
-        margin: 2em auto;
+        width: 95%;
+        margin: 2vh auto;
     }
 
     .content__title {
         color: var(--global-font-color);
         font-size: 1.5em;
     }
+
     .content__detail {
         color: var(--global-font-color);
         font-size: 1em;
     }
 
+    .nearby-places__container {
+        background: #fff;
+    }
+
+    .np-container__title {
+        color: var(--global-font-color);
+        font-size: 2em;
+    }
+
+    .np-container__grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid__item--thumbnail {
+        width: 100%;
+        margin: 1vh auto;
+        border: none;
+        filter: none;
+    }
+
+    .grid__item:hover > .grid__item--thumbnail {
+        scale: none;
+        filter: none;
+    }
 }
