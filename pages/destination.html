@@ -13,43 +13,47 @@
 <body class="page">
     <header class="page-header" id="header"></header>
     <main class="page-main destination">
+        <!-- 1st content: Banner -->
         <div class="destination__banner">
             <div class="banner__caption">Places to go</div>
         </div>
-        <div class="destination__menu">
-            <div class="des-menu__title">DESTINATION</div>
-            <div class="des-menu__intro">
-                Each place exudes its own distinct character.<br>Get a feel for Can Tho's fascinating in these interactive tours.
+        <div class="destination__main">
+            <!-- 2nd content: Menu-->
+            <div class="destination__menu">
+                <div class="des-menu__title">DESTINATION</div>
+                <div class="des-menu__detail">
+                    Each place exudes its own distinct character.<br>Get a feel for Can Tho's fascinating in these interactive tours.
+                </div>
+                <div class="des-menu__list">
+                    <div class="menu-list__item" onclick="fadeIn(1)">
+                        <img src="../images/destination/main-places/thumbnail/place-1-thumb.png" alt="" class="item__thumbnail">
+                        <div class="item__name">Cai Rang<br>Floating Market</div>
+                    </div>
+                    <div class="menu-list__item" onclick="fadeIn(2)">
+                        <img src="../images/destination/main-places/thumbnail/place-2-thumb.png" alt="" class="item__thumbnail">
+                        <div class="item__name">Ninh Kieu Wharf</div>
+                    </div>
+                    <div class="menu-list__item" onclick="fadeIn(3)">
+                        <img src="../images/destination/main-places/thumbnail/place-3-thumb.png" alt="" class="item__thumbnail">
+                        <div class="item__name">Binh Thuy<br>Ancient House</div>
+                    </div>
+                    <div class="break"></div>
+                    <div class="menu-list__item" onclick="fadeIn(4)">
+                        <img src="../images/destination/main-places/thumbnail/place-4-thumb.png" alt="" class="item__thumbnail">
+                        <div class="item__name">My Khanh<br>Tourist Village</div>
+                    </div>
+                    <div class="menu-list__item" onclick="fadeIn(5)">
+                        <img src="../images/destination/main-places/thumbnail/place-5-thumb.png" alt="" class="item__thumbnail">
+                        <div class="item__name">Bang Lang<br>Stork Garden</div>
+                    </div>
+                    <div class="menu-list__item" onclick="fadeIn(6)">
+                        <img src="../images/destination/main-places/thumbnail/place-6-thumb.png" alt="" class="item__thumbnail">
+                        <div class="item__name">Truc Lam<br>Zen Monastery</div>
+                    </div>
+                </div>
             </div>
-            <div class="des-menu__list">
-                <div class="menu-list__item" onclick="fadeIn(1)">
-                    <img src="/images/destination/place1-thumb.png" alt="" class="item__thumbnail">
-                    <div class="item__name">Cai Rang<br>Floating Market</div>
-                </div>
-                <div class="menu-list__item" onclick="fadeIn(2)">
-                    <img src="/images/destination/place2-thumb.png" alt="" class="item__thumbnail">
-                    <div class="item__name">Ninh Kieu Wharf</div>
-                </div>
-                <div class="menu-list__item" onclick="fadeIn(3)">
-                    <img src="/images/destination/place3-thumb.png" alt="" class="item__thumbnail">
-                    <div class="item__name">Binh Thuy<br>Ancient House</div>
-                </div>
-                <div class="break"></div>
-                <div class="menu-list__item" onclick="fadeIn(4)">
-                    <img src="/images/destination/place4-thumb.png" alt="" class="item__thumbnail">
-                    <div class="item__name">My Khanh<br>Tourist Village</div>
-                </div>
-                <div class="menu-list__item" onclick="fadeIn(5)">
-                    <img src="/images/destination/place5-thumb.png" alt="" class="item__thumbnail">
-                    <div class="item__name">Bang Lang<br>Stork Garden</div>
-                </div>
-                <div class="menu-list__item" onclick="fadeIn(6)">
-                    <img src="/images/destination/place6-thumb.png" alt="" class="item__thumbnail">
-                    <div class="item__name">Truc Lam<br>Zen Monastery</div>
-                </div>
-            </div>
-        </div>
-        <div class="destination__place" id="background">
+            <!-- Hidden Elements -->
+            <div class="destination__place" id="background" onclick="fadeOut()"></div>
             <div class="des__place-container" id="place1">
                 <div class="place-container__left">
                     <div class="left__place-name">Cai Rang Floating Market</div>
@@ -65,9 +69,7 @@
                         <strong>Address:</strong> Cai Rang Bridge, Cai Rang District, Can Tho City.
                     </div>
                 </div>
-                <div class="place-container__right" id="img1">
-                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(1)"></i>
-                </div>
+                <div class="place-container__right"></div>
             </div>
             <div class="des__place-container" id="place2">
                 <div class="place-container__left">
@@ -83,9 +85,7 @@
                         <strong>Address:</strong> Hai Ba Trung Street, Tan An Ward, Ninh Kieu District, Can Tho City.
                     </div>
                 </div>
-                <div class="place-container__right">
-                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(2)"></i>
-                </div>
+                <div class="place-container__right"></div>
             </div>
             <div class="des__place-container" id="place3">
                 <div class="place-container__left">
@@ -100,9 +100,7 @@
                         <strong>Address:</strong> 144 Bui Huu Nghia Street, Binh Thuy District, Can Tho City.
                     </div>
                 </div>
-                <div class="place-container__right">
-                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(3)"></i>
-                </div>
+                <div class="place-container__right"></div>
             </div>
             <div class="des__place-container" id="place4">
                 <div class="place-container__left">
@@ -118,9 +116,7 @@
                         <strong>Address:</strong> 335 Lo Vong Cung Street, Phong Dien District, Can Tho City.
                     </div>
                 </div>
-                <div class="place-container__right">
-                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(4)"></i>
-                </div>
+                <div class="place-container__right"></div>
             </div>
             <div class="des__place-container" id="place5">
                 <div class="place-container__left">
@@ -138,17 +134,13 @@
                         <strong>Address:</strong> Thuan An Ward, Thot Not District, Can Tho City.
                     </div>
                 </div>
-                <div class="place-container__right">
-                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(5)"></i>
-                </div>
+                <div class="place-container__right"></div>
             </div>
             <div class="des__place-container" id="place6">
                 <div class="place-container__left">
                     <div class="left__place-name">Truc Lam Zen Monastery</div>
                     <div class="left__place-detail">
-                        The monastery was built on an area of nearly 4 hectares, started construction on July 16, 2013 and completed after 10 months 
-                        of construction. On May 17, 2014, the inauguration ceremony of Truc Lam Phuong Nam Zen Monastery was solemnly organized by 
-                        the Buddhist Board of Can Tho.<br>The entire building has a tiled roof structure, ironwood pillars, brick walls, floors and 
+                        The entire building has a tiled roof structure, ironwood pillars, brick walls, floors and 
                         walkways. Besides the main hall, the campus is balanced with about 20 work items such as: ancestral house, spacious hall for 
                         teaching and studying for about 500 monks, Buddhists, 9-storey stupa, drum tower, bronze bell tower, monks’ quarters and guest 
                         houses, monasteries, libraries and medicine rooms, water houses, etc., were built around them, forming an architectural complex 
@@ -158,35 +150,56 @@
                         <strong>Address:</strong> 923 Road, My Khanh, Phong Dien District, Can Tho City.
                     </div>
                 </div>
-                <div class="place-container__right">
-                    <i class="fa-solid fa-circle-xmark exit-icon" onclick="fadeOut(6)"></i>
+                <div class="place-container__right"></div>
+            </div>
+            <!-- 3rd content: Page break by image -->
+            <div class="destination__img-break"></div>
+            <!-- 4th content: Over view -->
+            <div class="destination__over-view">
+                <div class="over-view__content" id="to-margin-left">
+                    <div class="content__title">Over View</div>
+                    <div class="content__detail">
+                        At first glance, Can Tho seems to be a bustling city, with a stream of commerce flowing continuously down the Hau River. But treat yourself 
+                        to a room on its leafy banks, dine on its sun-ripened fruits and fresh river fish, glide on sampans through its sultry canals, and you’ll 
+                        soon realise Can Tho’s big city facade is just half the story. The content half? Misty sunrises over the water, lazy afternoons swaying in a 
+                        hammock, and balmy evenings announced by a chorus of insects. Under the Mekong Delta’s blazing blue skies, Can Tho leaves a vivid impression.
+                    </div>
+                </div>
+                <div class="over-view__content" id="to-margin-right">
+                    <div class="content__title">Can Tho Weather</div>
+                    <div class="content__detail">
+                        Can Tho has a tropical climate. Summers come with heavy rainfall, and most of the rest of the year is hot and dry. December and January are 
+                        the coolest months. Rains fall regularly from July to November, and the heat is on from March to June.
+                    </div>
+                    <div class="content__title">Can Tho Transport</div>
+                    <div class="content__detail">
+                        The international airport in Can Tho is just 20 minutes outside of the city, with flights arriving from major hubs in Vietnam. Taking passengers 
+                        on the four-hour journey from Ho Chi Minh City stop at the bus terminal four kilometres outside the town. It’s also possible to reach Can Tho 
+                        via the Hau River, on a cruise from Ho Chi Minh City or Cambodia. Once in town, local taxis are readily available. Cycling is also an option 
+                        on the islets and roads leading away from the city. Local ferries run regularly between the mainland and islets.
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="destination__text-break">And more other beautiful places...</div>
-        <div class="destination__img-break"></div>
-        <div class="destination__over-view">
-            <div class="over-view__content">
-                <div class="content__title">OVER VIEW</div>
-                <div class="content__detail">
-                    At first glance, Can Tho seems to be a bustling city, with a stream of commerce flowing continuously down the Hau River. But treat yourself 
-                    to a room on its leafy banks, dine on its sun-ripened fruits and fresh river fish, glide on sampans through its sultry canals, and you’ll 
-                    soon realise Can Tho’s big city facade is just half the story. The content half? Misty sunrises over the water, lazy afternoons swaying in a 
-                    hammock, and balmy evenings announced by a chorus of insects. Under the Mekong Delta’s blazing blue skies, Can Tho leaves a vivid impression.
+        <!-- 5th content: Nearby places -->
+        <div class="nearby-places__container">
+            <div class="np-container__title">SOME NEARBY PLACES</div>
+            <div class="np-container__grid">
+                <div class="grid__item grid__item--1">
+                    <img src="../images/destination/nearby-places/nearby-place-1.png" alt="" class="item__thumbnail grid__item--thumbnail">
+                    <p class="item__name">Ca Mau</p>
                 </div>
-            </div>
-            <div class="over-view__content">
-                <div class="content__title">CAN THO WEATHER</div>
-                <div class="content__detail">
-                    Can Tho has a tropical climate. Summers come with heavy rainfall, and most of the rest of the year is hot and dry. December and January are 
-                    the coolest months. Rains fall regularly from July to November, and the heat is on from March to June.
+                <div class="grid__item grid__item--2">
+                    <img src="../images/destination/nearby-places/nearby-place-2.png" alt="" class="item__thumbnail grid__item--thumbnail">
+                    <p class="item__name">An Giang</p>
                 </div>
-                <div class="content__title">CAN THO TRANSPORT</div>
-                <div class="content__detail">
-                    The international airport in Can Tho is just 20 minutes outside of the city, with flights arriving from major hubs in Vietnam. Taking passengers 
-                    on the four-hour journey from Ho Chi Minh City stop at the bus terminal four kilometres outside the town. It’s also possible to reach Can Tho 
-                    via the Hau River, on a cruise from Ho Chi Minh City or Cambodia. Once in town, local taxis are readily available. Cycling is also an option 
-                    on the islets and roads leading away from the city. Local ferries run regularly between the mainland and islets.
+                <div class="grid__item grid__item--3">
+                    <img src="../images/destination/nearby-places/nearby-place-3.png" alt="" class="item__thumbnail grid__item--thumbnail">
+                    <p class="item__name">Dong Thap</p>
+                </div>
+                <div class="grid__item grid__item--4">
+                    <img src="../images/destination/nearby-places/nearby-place-4.png" alt="" class="item__thumbnail grid__item--thumbnail">
+                    <p class="item__name">Ha Tien</p>
                 </div>
             </div>
         </div>
