@@ -389,6 +389,10 @@
         filter: none;
     }
 
+    .grid__item {
+        margin: 5px 0;
+    }
+
     .grid__item > p {
         font-size: 3em;
     }
