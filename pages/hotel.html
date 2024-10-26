@@ -54,60 +54,64 @@
                 </div>
             </div>
             <div class="modal_booking-content">
-                <form>
+                <form onsubmit="handleBookingHotelButton(event)">
                     <ul class="modal_booking-form">
                         <li class="modal_booking-form-hotel">
                             <label for="hotel" class="modal_booking-content-title">Hotel</label><br>
-                            <input type="text" id="hotel" name="hotel" class="hotel_res-name" readonly />
+                            <input type="text" id="hotelName" name="hotel" class="hotel_res-name" readonly />
                         </li>
                         <li class="modal_booking-form-name">
                             <label for="name" class="modal_booking-content-title">Full Name</label>
                             <div>
-                                <input type="text" id="firstname" name="firstname" placeholder="First name"
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name"
                                     class="modal_booking-name-input" required />
-                                <input type="text" id="lastname" name="lastname" placeholder="Last name"
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name"
                                     class="modal_booking-name-input" required />
                             </div>
                         </li>
                         <li class="modal_booking-form-gender">
                             <h4 class="modal_booking-content-title">Gender</h4>
-                            <input type="radio" id="male" name="gender" value="Male">
-                            <label for="male" class="modal_booking-content-subtitle">Male</label>
-                            <input type="radio" id="female" name="gender" value="Female">
-                            <label for="female" class="modal_booking-content-subtitle">Female</label>
-                            <input type="radio" id="other" name="gender" value="Other">
-                            <label for="other" class="modal_booking-content-subtitle">Other</label>
+                            <select id="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </li>
                         <li class="modal_booking-form-phone">
-                            <label for="phone_number" class="modal_booking-content-title">Phone number</label><br>
-                            <input type="tel" id="phone_number" name="phone" required placeholder="84989xxxxxx" />
-                            <div id="feedback"></div>
+                            <label for="phone" class="modal_booking-content-title">Phone number</label><br>
+                            <input type="tel" id="phone" name="phone" required placeholder="84989xxxxxx" />
                         </li>
                         <li class="modal_booking-form-email">
                             <label for="email" class="modal_booking-content-title">Email</label> <br>
                             <input type="email" id="email" name="email" placeholder="abc@gmail.com" required />
-                            <div id="feedback"></div>
+                        </li>
+                        <li class="modal_booking-form-room-type">
+                            <label for="roomType" class="modal_booking-content-title">Room type</label>
+                            <select id="roomType" name="roomId" class="select__room-type" required>
+                            </select>
                         </li>
                         <li class="modal_booking-form-date">
-                            <label for="check-in-date" class="modal_booking-content-title"> Check-in date</label>
-                            <input type="date" id="check-in-date" name="check-in-date" required />
-                            <label for="check-out-date" class="modal_booking-content-title"> Check-out date</label>
-                            <input type="date" id="check-out-date" name="check-out-date" required />
+                            <div>
+                                <label for="check-in-date" class="modal_booking-content-title"> Check-in date</label>
+                                <input type="date" id="checkInDate" name="checkInDate" required />
+                            </div>
+                            <div><label for="check-out-date" class="modal_booking-content-title"> Check-out date</label>
+                                <input type="date" id="checkOutDate" name="checkOutDate" required />
+                            </div>
                         </li>
                         <li class="modal_booking-form-number">
-                            <h4 class="modal_booking-content-title">Number of guests</h4>
                             <div>
-                                <label for="adults" class="modal_booking-content-subtitle">Adults</label><br>
-                                <input type="number" id="adults" name="adults" min="1" required />
+                                <label for="adults" class="modal_booking-content-title">No. adults</label><br>
+                                <input type="number" id="numOfAdults" name="numOfAdults" min="1" required />
                             </div>
                             <div>
-                                <label for="children" class="modal_booking-content-subtitle"> Children</label><br>
-                                <input type="number" id="children" name="children" min="0" />
+                                <label for="children" class="modal_booking-content-title">No. children</label><br>
+                                <input type="number" id="numOfChildren" name="numOfChildren" min="0" />
                             </div>
                         </li>
                         <li class="modal_booking-form-request">
                             <label for="requests" class="modal_booking-content-title">Special requests:</label><br>
-                            <textarea id="requests" name="requests" rows="4"></textarea>
+                            <textarea id="specialRequests" name="specialRequest" rows="4"></textarea>
                         </li>
                     </ul>
                     <div class="modal_booking-button-container">
@@ -128,60 +132,60 @@
                 </div>
             </div>
             <div class="modal_booking-content">
-                <form>
+                <form onsubmit="handleBookingRestaurantButton(event)">
                     <ul class="modal_booking-form">
                         <li class="modal_booking-form-hotel">
                             <label for="hotel" class="modal_booking-content-title">Restaurant</label><br>
-                            <input type="text" id="hotel" name="hotel" class="hotel_res-name" readonly />
+                            <input type="text" id="restaurantName" name="hotel" class="hotel_res-name" readonly />
                         </li>
                         <li class="modal_booking-form-name">
-                            <label for="name" class="modal_booking-content-title">Fullame</label>
+                            <label for="name" class="modal_booking-content-title">Full Name</label>
                             <div>
-                                <input type="text" id="firstname" name="firstname" placeholder="First name"
+                                <input type="text" id="firstNameRes" name="firstName" placeholder="First name"
                                     class="modal_booking-name-input" required />
-                                <input type="text" id="lastname" name="lastname" placeholder="Last name"
+                                <input type="text" id="lastNameRes" name="lastName" placeholder="Last name"
                                     class="modal_booking-name-input" required />
                             </div>
                         </li>
                         <li class="modal_booking-form-gender">
                             <h4 class="modal_booking-content-title">Gender</h4>
-                            <input type="radio" id="male" name="gender" value="Male">
-                            <label for="male" class="modal_booking-content-subtitle">Male</label>
-                            <input type="radio" id="female" name="gender" value="Female">
-                            <label for="female" class="modal_booking-content-subtitle">Female</label>
-                            <input type="radio" id="other" name="gender" value="Other">
-                            <label for="other" class="modal_booking-content-subtitle">Other</label>
+                            <select id="genderRes" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </li>
                         <li class="modal_booking-form-phone">
                             <label for="phone_number" class="modal_booking-content-title">Phone number</label><br>
-                            <input type="tel" id="phone_number" name="phone" required placeholder="84989xxxxxx" />
-                            <div id="feedback"></div>
+                            <input type="tel" id="phoneRes" name="phone" required placeholder="84989xxxxxx" />
                         </li>
                         <li class="modal_booking-form-email">
                             <label for="email" class="modal_booking-content-title">Email</label> <br>
-                            <input type="email" id="email" name="email" placeholder="abc@gmail.com" required />
-                            <div id="feedback"></div>
+                            <input type="email" id="emailRes" name="email" placeholder="abc@gmail.com" required />
                         </li>
                         <li class="modal_booking-form-date">
-                            <label for="arrival-date" class="modal_booking-content-title"> Arrival date</label>
-                            <input type="date" id="arrival-date" name="arrival-date" required />
-                            <label for="check-in-time" class="modal_booking-content-title"> Check-in time</label>
-                            <input type="time" id="check-in-time" name="check-in-time" required />
-                        </li>
-                        <li class="modal_booking-form-number">
-                            <h4 class="modal_booking-content-title">Number of guests</h4>
                             <div>
-                                <label for="adults" class="modal_booking-content-subtitle">Adults</label><br>
-                                <input type="number" id="adults" name="adults" min="1" required />
+                                <label for="arrival-date" class="modal_booking-content-title"> Arrival date</label>
+                                <input type="date" id="arrivalDate" name="arrival-date" required />
                             </div>
                             <div>
-                                <label for="children" class="modal_booking-content-subtitle"> Children</label><br>
-                                <input type="number" id="children" name="children" min="0" />
+                                <label for="check-in-time" class="modal_booking-content-title"> Check-in time</label>
+                                <input type="time" id="checkInTime" name="check-in-time" required />
+                            </div>
+                        </li>
+                        <li class="modal_booking-form-number">
+                            <div>
+                                <label for="adults" class="modal_booking-content-title">No. Adults</label><br>
+                                <input type="number" id="numOfAdultsRes" name="adults" min="1" required />
+                            </div>
+                            <div>
+                                <label for="children" class="modal_booking-content-title">No. Children</label><br>
+                                <input type="number" id="numOfChildrenRes" name="children" min="0" />
                             </div>
                         </li>
                         <li class="modal_booking-form-request">
                             <label for="requests" class="modal_booking-content-title">Special requests:</label><br>
-                            <textarea id="requests" name="requests" rows="4"></textarea>
+                            <textarea id="specialRequestsRes" name="requests" rows="4"></textarea>
                         </li>
                     </ul>
                     <div class="modal_booking-button-container">

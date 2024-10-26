@@ -262,40 +262,5 @@ overlay.addEventListener('click', () => {
         closeModal(modal);
     });
 });
-// Truyền dữ liệu vào form
-const bookingButtons = document.querySelectorAll('.Booking_button');
-bookingButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const bookingform = document.querySelector(button.dataset.modalTarget);
-        const nameinForm = bookingform.querySelector('.hotel_res-name');
-        const name = button.closest('.layout_info-summary').querySelector('.layout_info-title');
-        const namevalue = name.innerText;
-        nameinForm.value = namevalue;
-    });
-});
-//Mở modal loading
-const submitButton = document.querySelectorAll('.submit_button');
-const loading = document.getElementById('loading_card');
-const success = document.getElementById('Success_card');
-const overlay2 = document.getElementById('overlay2');
-submitButton.forEach(button => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        loading.style.display = 'flex';
-        const bookingform = document.querySelector('.modal.modal--active');
-        setTimeout(() => {
-            if (bookingform) {
-                closeModal(bookingform);
-            }
-            overlay2.style.display = 'block';
-            loading.style.display = 'none';
-            success.style.display = 'block';
-        }, 2000);
-    });
-});
-overlay2.addEventListener('click', () => {
-    success.style.display = 'none';
-    overlay2.style.display = 'none';
-});
 
 

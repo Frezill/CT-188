@@ -4,9 +4,9 @@ const hotelData = [
         name: 'Cantho Eco Resort',
         layoutPrice: '944,444 VND',
         roomType: [
-            { name: 'Single bed room', price: '950,000 VND' },
-            { name: 'Double bed room', price: '1,500,000 VND' },
-            { name: 'Family room', price: '3,000,000 VND' }
+            { roomId: "hotel1_room1", name: 'Single bed room', price: '950,000 VND' },
+            { roomId: "hotel1_room2", name: 'Double bed room', price: '1,500,000 VND' },
+            { roomId: "hotel1_room2", name: 'Family room', price: '3,000,000 VND' }
         ],
         mainImage: '/images/Hotel img/CanthoEcoResort/CanthoEcoResort.jpeg',
         layoutAddress: "Phong Dien, CanTho",
@@ -45,9 +45,9 @@ const hotelData = [
         name: 'Sheraton Hotel',
         layoutPrice: '1,800,000 VND',
         roomType: [
-            { name: 'Single bed room', price: '950,000 VND' },
-            { name: 'Double bed room', price: '1,500,000 VND' },
-            { name: 'Family room', price: '3,000,000 VND' }
+            { roomId: "hotel2_room1", name: 'Single bed room', price: '950,000 VND' },
+            { roomId: "hotel2_room2", name: 'Double bed room', price: '1,500,000 VND' },
+            { roomId: "hotel2_room3", name: 'Family room', price: '3,000,000 VND' }
         ],
         mainImage: '/images/Hotel img/Sheraton/Sheraton.jpg',
         layoutAddress: "Ninh Kieu, CanTho",
@@ -85,9 +85,9 @@ const hotelData = [
         name: 'Muong Thanh Luxury Hotel',
         layoutPrice: '1,301,270 VND',
         roomType: [
-            { name: 'Single bed room', price: '950,000 VND' },
-            { name: 'Double bed room', price: '1,500,000 VND' },
-            { name: 'Family room', price: '3,000,000 VND' }
+            { roomId: "hotel3_room1", name: 'Single bed room', price: '950,000 VND' },
+            { roomId: "hotel3_room2", name: 'Double bed room', price: '1,500,000 VND' },
+            { roomId: "hotel3_room3", name: 'Family room', price: '3,000,000 VND' }
         ],
         mainImage: '/images/Hotel img/MuongThanh/MuongThanh.jpg',
         layoutAddress: "Ninh Kieu, CanTho",
@@ -125,9 +125,9 @@ const hotelData = [
         name: 'Charmant Suites a Boutique Hotel',
         layoutPrice: '2,024,067 VND',
         roomType: [
-            { name: 'Single bed room', price: '950,000 VND' },
-            { name: 'Double bed room', price: '1,500,000 VND' },
-            { name: 'Family room', price: '3,000,000 VND' }
+            { roomId: "hotel4_room1", name: 'Single bed room', price: '950,000 VND' },
+            { roomId: "hotel4_room2", name: 'Double bed room', price: '1,500,000 VND' },
+            { roomId: "hotel4_room3", name: 'Family room', price: '3,000,000 VND' }
         ],
         mainImage: '/images/Hotel img/Charmant Suites/Charmant_Suites.jpg',
         layoutAddress: "Ninh Kieu, CanTho",

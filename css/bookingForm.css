@@ -42,49 +42,22 @@
 
 .modal_booking-form {
     display: grid;
-    grid-template-areas:
-        'hotel hotel'
-        'name gender'
-        'phone email'
-        'date date'
-        'number number'
-        'request request';
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(2, 1fr);
     list-style-type: none;
+    gap: 15px;
+    padding: 0 50px;
+}
+
+.modal_booking-form-date,
+.modal_booking-form-number {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 }
 
-.modal_booking-form-hotel {
-    grid-area: hotel;
-}
-
-.modal_booking-form-name {
-    grid-area: name;
-}
-
-.modal_booking-form-gender {
-    grid-area: gender;
-}
-
-.modal_booking-form-phone {
-    grid-area: phone;
-}
-
-.modal_booking-form-email {
-    grid-area: email;
-}
-
-.modal_booking-form-date {
-    grid-area: date;
-}
-
-.modal_booking-form-number {
-    grid-area: number;
-}
-
-.modal_booking-form-request {
-    grid-area: request;
+.modal_booking-form-room-type {
+    display: flex;
+    flex-direction: column;
 }
 
 .modal_booking-container {
@@ -96,12 +69,12 @@
 }
 
 .modal_booking-content-title {
-    font-size: min(3vw, 1.75rem);
+    font-size: clamp(15px, 1.7vw, 20px);
     font-weight: 600;
 }
 
 .modal_booking-content-subtitle {
-    font-size: min(2vw, 1.5rem);
+    font-size: clamp(12px, 1.5vw, 18px);
 }
 
 input[type="text"],
@@ -110,6 +83,7 @@ input[type="email"],
 input[type="date"],
 input[type="number"],
 input[type="time"],
+select,
 textarea {
     width: 100%;
     padding: 8px;
@@ -178,4 +152,11 @@ textarea {
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     text-align: center;
     color: #5d5d5d;
+}
+
+@media(max-width: 1024px) {
+    .modal_booking-form {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 30px;
+    }
 }
