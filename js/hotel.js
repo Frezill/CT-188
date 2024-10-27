@@ -75,8 +75,8 @@ const buttonData = document.querySelectorAll('#layout_info > div');
 })();
 
 // Fetch hotel detail modal
-(function fetchHotelDetailModal() {
-    hotelData.map((item) => {
+(async function fetchHotelDetailModal() {
+    await hotelData.map((item) => {
         document.getElementById("layout").insertAdjacentHTML(
             'beforeend',
             `<div class="modal" id="${item.id}">
