@@ -137,8 +137,8 @@ const buttonData = document.querySelectorAll('#layout_info > div');
 })();
 
 //Fetch restaurant detail modal
-(function fetchRestaurantDetailModal() {
-    restaurantData.map((item) => {
+(async function fetchRestaurantDetailModal() {
+    await restaurantData.map((item) => {
         document.getElementById("layout").insertAdjacentHTML(
             'beforeend',
             `
