@@ -15,12 +15,12 @@
     <header class="page-header" id="header"></header>
     <main class="page-main homepage-container">
 
-        <div class="home">
-            <video class="video-slider active" src="../images/homepage/1.mp4" autoplay muted loop></video>
-            <video class="video-slider" src="../images/homepage/2.mp4" autoplay muted loop></video>
-            <video class="video-slider" src="../images/homepage/3.mp4" autoplay muted loop></video>
+        <div class="banner">
+            <video class="banner__video-slider active" src="../images/homepage/1.mp4" autoplay muted loop></video>
+            <video class="banner__video-slider" src="../images/homepage/2.mp4" autoplay muted loop></video>
+            <video class="banner__video-slider" src="../images/homepage/3.mp4" autoplay muted loop></video>
 
-            <div class="content active">
+            <div class="banner__content active">
                 <h1>Vibrant Can Tho</h1>
                 <p>Can Tho, the vibrant heart of the Mekong Delta, is a captivating city known for its rich culture and
                     stunning
@@ -34,7 +34,7 @@
                 <a href="../pages/destination.html">Discover More</a>
             </div>
 
-            <div class="content">
+            <div class="banner__content">
                 <h1>Travel Experience.</h1>
                 <p>Exploring Can Tho is an unforgettable adventure for any traveler. Visitors can immerse themselves in
                     the rich
@@ -48,7 +48,7 @@
                     More</a>
             </div>
 
-            <div class="content">
+            <div class="banner__content">
                 <h1>Cai Rang Floating Market.</h1>
                 <p>Cai Rang Floating Market is a lively spectacle of boats bustling with vibrant fruits, local
                     delicacies, and
@@ -62,13 +62,13 @@
                     More</a>
             </div>
 
-            <div class="media-icons">
+            <div class="banner__media-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
 
-            <div class="slider-navigation">
+            <div class="banner__slider-navigation">
                 <div class="nav-btn active"></div>
                 <div class="nav-btn"></div>
                 <div class="nav-btn"></div>
@@ -81,22 +81,18 @@
             <p>Tag your best <span class="text-red">#CanThoTravel</span> moments on Instagram, Twitter.
             </p>
 
-            <div class="image-grid">
-                <div class="small-images">
-                    <img src="../images/homepage/2.1.jpg" alt="Image 1" class="small-image">
-                    <img src="../images/homepage/2.2.jpg" alt="Image 2" class="small-image">
-                    <img src="../images/homepage/2.3.jpg" alt="Image 3" class="small-image">
-                    <img src="../images/homepage/2.4.jpg" alt="Image 4" class="small-image">
+            <div class="story__images">
+                <div class="story__small-images">
+                    <img src="../images/homepage/2.1.jpg" alt="Image 1" class="story__small-image">
+                    <img src="../images/homepage/2.2.jpg" alt="Image 2" class="story__small-image">
+                    <img src="../images/homepage/2.3.jpg" alt="Image 3" class="story__small-image">
+                    <img src="../images/homepage/2.4.jpg" alt="Image 4" class="story__small-image">
                 </div>
-                <div class="large-image-container">
-                    <img src="../images/homepage/3.jpg" alt="Large Image 1" class="large-image">
-                </div>
+                <img src="../images/homepage/3.jpg" alt="Large Image 1" class="large-image">
+
             </div>
-        </section>
 
-
-        <div>
-            <section class="international-share">
+            <section class="story__sharing">
                 <h2>Experience Vietnam: A Journey Worth Sharing</h2>
                 <p>We all have unforgettable moments from our travels that shape who we are. Whether it's the
                     breathtaking
@@ -107,51 +103,56 @@
                     <span class="text-red">#CanThoTravel</span> on Instagram and Twitter.
                 </p>
             </section>
-            <section class="international-news">
-                <h1>VIETNAM THROUGH THE LENS OF INTERNATIONAL NEWS</h1>
-                <p>Find out the reasons why Vietnam is worth to visit</p>
+        </section>
 
-                <div class="news">
-                    <div class="news-item">
-                        <a target="_blank" href="https://www.tasteatlas.com/best-rated-dishes-in-vietnam"><img
-                                src="../images/homepage/4.1.jpg" alt="TasteAtlas-logo.jpg"></a>
-                        <h3>TASTEATLAS</h3>
-                        <p>TasteAtlas food rankings are based on authentic user ratings, using mechanisms to filter out
-                            bots,
-                            nationalist biases, and prioritize feedback from knowledgeable users.</p>
-                    </div>
-                    <div class="news-item">
-                        <a target="_blank"
-                            href="https://travelweekly.co.uk/in-depth/spotlight/agent-diary-a-trip-to-vietnam-shows-how-specialist-operators-give-peace-of-mind-and-value-for-money">
-                            <img src="../images/homepage/4.2.jpg" alt="Travel Weekl">
-                        </a>
-                        <h3>TRAVEL WEEKl</h3>
-                        <p>Visiting the South-East Asian country reminds Thompson Travel’s Sharon Thompson of the
-                            wonders of
-                            travel.</p>
-                    </div>
-                    <div class="news-item">
-                        <a target="_blank"
-                            href="https://www.cntraveler.com/gallery/most-beautiful-small-towns-in-the-world">
-                            <img src="../images/homepage/4.3.jpg" alt="Conde Nast Traveler">
-                        </a>
-                        <h3>CONDÉ NAST TRAVELER</h3>
-                        <p>To get you started on your next fairy tale adventure, we’ve rounded up 50 of the most
-                            beautiful small
-                            towns in the world.</p>
-                    </div>
-                    <div class="news-item">
-                        <a target="_blank"
-                            href="https://news.booking.com/longing-for-spring-five-blossoming-destinations-to-enjoy-an-extended-stay/">
-                            <img src="../images/homepage/4.4.jpg" alt="Booking.com">
-                        </a>
-                        <h3>Booking.com</h3>
-                        <p>Spring has finally arrived, bringing with it the perfect opportunity to venture out and
-                            explore the world.</p>
-                    </div>
+
+
+
+        <section class="international-news">
+            <h1>VIETNAM THROUGH THE LENS OF INTERNATIONAL NEWS</h1>
+            <p>Find out the reasons why Vietnam is worth to visit</p>
+
+            <div class="international__news-content">
+                <div class="international__news-item">
+                    <a target="_blank" href="https://www.tasteatlas.com/best-rated-dishes-in-vietnam"><img
+                            src="../images/homepage/4.1.jpg" alt="TasteAtlas-logo.jpg"></a>
+                    <h3>TASTEATLAS</h3>
+                    <p>TasteAtlas food rankings are based on authentic user ratings, using mechanisms to filter out
+                        bots,
+                        nationalist biases, and prioritize feedback from knowledgeable users.</p>
                 </div>
-            </section>
-        </div>
+                <div class="international__news-item">
+                    <a target="_blank"
+                        href="https://travelweekly.co.uk/in-depth/spotlight/agent-diary-a-trip-to-vietnam-shows-how-specialist-operators-give-peace-of-mind-and-value-for-money">
+                        <img src="../images/homepage/4.2.jpg" alt="Travel Weekl">
+                    </a>
+                    <h3>TRAVEL WEEKl</h3>
+                    <p>Visiting the South-East Asian country reminds Thompson Travel’s Sharon Thompson of the
+                        wonders of
+                        travel.</p>
+                </div>
+                <div class="international__news-item">
+                    <a target="_blank"
+                        href="https://www.cntraveler.com/gallery/most-beautiful-small-towns-in-the-world">
+                        <img src="../images/homepage/4.3.jpg" alt="Conde Nast Traveler">
+                    </a>
+                    <h3>CONDÉ NAST TRAVELER</h3>
+                    <p>To get you started on your next fairy tale adventure, we’ve rounded up 50 of the most
+                        beautiful small
+                        towns in the world.</p>
+                </div>
+                <div class="international__news-item">
+                    <a target="_blank"
+                        href="https://news.booking.com/longing-for-spring-five-blossoming-destinations-to-enjoy-an-extended-stay/">
+                        <img src="../images/homepage/4.4.jpg" alt="Booking.com">
+                    </a>
+                    <h3>Booking.com</h3>
+                    <p>Spring has finally arrived, bringing with it the perfect opportunity to venture out and
+                        explore the world.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
     <footer class="page-footer" id="footer"></footer>
 </body>

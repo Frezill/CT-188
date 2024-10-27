@@ -3,9 +3,9 @@ $(function () {
     $("#footer").load("../components/footer.html");
 });
 
-const videos = document.querySelectorAll('.video-slider');
-const navBtns = document.querySelectorAll('.slider-navigation .nav-btn');
-const contents = document.querySelectorAll('.content');
+const videos = document.querySelectorAll('.banner__video-slider');
+const navBtns = document.querySelectorAll('.banner__slider-navigation .nav-btn');
+const contents = document.querySelectorAll('.banner__content');
 
 let currentIndex = 0;
 function updateActiveSlide(index) {
@@ -30,3 +30,9 @@ navBtns.forEach((btn, index) => {
 });
 
 updateActiveSlide(currentIndex);
+
+//auto change video
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % 3;
+    updateActiveSlide(currentIndex);
+}, 30000)
