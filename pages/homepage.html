@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../js/page.js" defer></script>
     <script src="../js/homepage.js" defer></script>
     <link rel="stylesheet" href="../css/page.css">
     <link rel="stylesheet" href="../css/homepage.css">
@@ -12,7 +13,10 @@
 </head>
 
 <body class="page">
-    <div id="loader"></div>
+    <div id="loader" class="page-loading">
+        <img src="../images/page-loading.gif" alt="" class="page-loading__img">
+        <h3>Loading...</h3>
+    </div>
     <header class="page-header" id="header"></header>
     <main class="page-main homepage-container">
 

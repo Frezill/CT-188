@@ -1,9 +1,3 @@
-$(function () {
-    $("#header").load("../components/header.html");
-    $("#footer").load("../components/footer.html");
-    $("#loader").load("../components/loader.html");
-});
-
 const videos = document.querySelectorAll('.banner__video-slider');
 const navBtns = document.querySelectorAll('.banner__slider-navigation .nav-btn');
 const contents = document.querySelectorAll('.banner__content');
