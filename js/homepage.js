@@ -1,6 +1,7 @@
 $(function () {
     $("#header").load("../components/header.html");
     $("#footer").load("../components/footer.html");
+    $("#loader").load("../components/loader.html");
 });
 
 const videos = document.querySelectorAll('.banner__video-slider');
