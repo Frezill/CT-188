@@ -1,8 +1,3 @@
-$(function () {
-    $("#header").load("../components/header.html");
-    $("#footer").load("../components/footer.html");
-    $("#loader").load("../components/loader.html");
-});
 const buttons = document.getElementsByClassName('layout_head-button');
 const buttonData = document.querySelectorAll('#layout_info > div');
 

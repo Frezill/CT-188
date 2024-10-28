@@ -1,9 +1,3 @@
-$(function () {
-    $("#header").load("../components/header.html");
-    $("#footer").load("../components/footer.html");
-    $("#loader").load("../components/loader.html");
-});
-
 for (let i = 1; i <= 6; i++)
     document.getElementsByClassName("place-container__right")[i - 1].style.backgroundImage = `url(../images/destination/main-places/place-${i}.png)`;
 

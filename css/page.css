@@ -57,3 +57,32 @@ a {
 .page-footer {
     grid-area: footer;
 }
+
+/* loading page */
+body {
+    overflow: hidden;
+}
+
+.page-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+}
+
+.page-loading__img {
+    height: 150px;
+}
+
+.--fade {
+    opacity: 0 !important;
+    pointer-events: none;
+}
