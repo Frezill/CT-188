@@ -1,6 +1,7 @@
 $(function () {
     $("#header").load("../components/header.html");
     $("#footer").load("../components/footer.html");
+    $("#loader").load("../components/loader.html");
 });
 
 let API_KEY = '06e9d8f5e9eb4e74a0f82423242809';
