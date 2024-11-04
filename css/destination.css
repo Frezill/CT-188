@@ -380,7 +380,7 @@
 
     .np-container__grid {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
     }
 
     .grid__item--thumbnail {
@@ -390,7 +390,7 @@
     }
 
     .grid__item {
-        margin: 5px 0;
+        margin: 0 2px;
     }
 
     .grid__item > p {
@@ -400,5 +400,14 @@
     .grid__item:hover > .grid__item--thumbnail {
         scale: none;
         filter: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .np-container__grid {
+        flex-direction: column;
+    }
+    .grid__item {
+        margin: 3px 0;
     }
 }
