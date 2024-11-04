@@ -122,6 +122,13 @@ video.active {
     gap: 10px;
 }
 
+@media(max-width: 480px) {
+    .banner__slider-navigation {
+        right: 0;
+        transform: translateX(50%);
+    }
+}
+
 .banner__slider-navigation .nav-btn {
     background-color: white;
     border: none;

@@ -3,16 +3,7 @@ window.addEventListener("load", () => {
     document.querySelector(".page-loading").classList.add("--fade");
 });
 
-(function () {
-    fetch("../components/header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header").innerHTML = data;
-        });
-
-    fetch("../components/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
-})();
+$(function () {
+    $("#header").load("../components/header.html");
+    $("#footer").load("../components/footer.html");
+});
