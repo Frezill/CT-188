@@ -71,7 +71,7 @@
 }
 
 .weather-forecast__now-infor--detail img {
-    width: 8vw;
+    width: clamp(80px, 8vw, 150px);
 }
 
 .weather-forecast__now-infor--text {
