@@ -14,7 +14,7 @@
 }
 
 .modal_booking-title {
-    font-size: clamp(2rem, 8vw, 8rem);
+    font-size: clamp(2rem, 8vw, 6rem);
     font-weight: bold;
     color: #c38d30;
     text-align: center;

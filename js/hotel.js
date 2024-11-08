@@ -1,5 +1,6 @@
 const buttons = document.getElementsByClassName('layout_head-button');
-const buttonData = document.querySelectorAll('#layout_info > div');
+const buttonData = document.querySelectorAll('#layout_info > div > div');
+
 
 //Fetch hotel 
 (function fetchHotel() {
@@ -97,11 +98,9 @@ const buttonData = document.querySelectorAll('#layout_info > div');
                         <section class="modal_address">
                             <h4>Address</h4>
                             <p>${item.address}</p>
-                            <iframe
-                                src="${item.map}"
-                                style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade" class="modal_address-map">
-                            </iframe>
+
+                            <div id="map-${item.id}" class="modal_address-map"></div>
+
                         </section>
                         <section class="modal_review">
                             <h3 class="modal_review-point">${item.point}/10</h4>
@@ -129,6 +128,18 @@ const buttonData = document.querySelectorAll('#layout_info > div');
             </div>
             `
         );
+
+        const mapContainer = document.getElementById(`map-${item.id}`);
+        const map = L.map(mapContainer).setView([item.lat,item.long], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 22,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([item.lat, item.long]).addTo(map)
+            .bindPopup(`<b>${item.name}</b><br>${item.layoutAddress}`)
+            .openPopup();
+
     });
 })();
 
@@ -164,10 +175,9 @@ const buttonData = document.querySelectorAll('#layout_info > div');
                         <section class="modal_address">
                             <h4>Address</h4>
                             <p>${item.address}</p>
-                            <iframe
-                                src="${item.map}"
-                                style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade" class="modal_address-map"></iframe>
+
+                             <div id="map-${item.id}" class="modal_address-map"></div>
+
                         </section>
                         <section class="modal_review">
                             <h3 class="modal_review-point">${item.point}/10</h3>
@@ -196,16 +206,30 @@ const buttonData = document.querySelectorAll('#layout_info > div');
             </div>
             `
         );
+
+        const mapContainer = document.getElementById(`map-${item.id}`);
+        const map = L.map(mapContainer).setView([item.lat,item.long], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 22,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([item.lat, item.long]).addTo(map)
+            .bindPopup(`<b>${item.name}</b><br>${item.layoutAddress}`)
+            .openPopup();
+
     });
 })();
 
 //Ẩn hiện nội dung các button
 Array.from(buttons).forEach((button, i) => {
     button.addEventListener('click', () => {
-        buttonData.forEach((data, j) => {
-            if (j === i) { data.classList.remove('layout_info-hidden'); }
-            else { data.classList.add('layout_info-hidden'); }
+
+        buttonData.forEach((data) => {
+            data.classList.remove('layout_info-active');
+
         });
+        buttonData[i].classList.add('layout_info-active'); // Đảm bảo chính tả đúng
     });
 });
 

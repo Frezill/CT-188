@@ -1,7 +1,3 @@
-body {
-    font-family: 'Afacad Flux', sans-serif;
-}
-
 /* Layout tổng của web */
 #layout {
     display: grid;
@@ -18,7 +14,7 @@ body {
     padding: min(1vw, 50px);
 }
 
-#layout_info {
+#layhout_info {
     grid-area: info;
     background-color: #ffffff;
 }
@@ -33,36 +29,38 @@ body {
 }
 
 .layout_head-button {
-    line-height: min(max(3vw, 24px), 50px);
-    height: min(max(3vw, 24px), 50px);
-    width: min(max(20vw, 250px), 500px);
+    line-height: clamp(24px,4.5vw,50px);
+    height: clamp(24px,4.5vw,50px);
+    width: clamp(200px,20vw,400px);
     text-align: center;
-    border: none;
+    border: 2px solid #286c96;
     border-radius: 3px;
     background-color: #ffffff;
-    font-size: min(max(2vw, 16px), 32px);
-    text-decoration: none;
-    color: black;
+    font-size: clamp(16px, 2.5vw, 32px);
+    color: #286c96;
 }
 
 .layout_head-button:hover {
     background-color: #3a97d0;
     color: white;
+    cursor: pointer;
 }
 
 .button_clicked {
     background-color: #0174BE;
+    border: none !important;
     color: white;
     box-shadow: 2px 2px 2px #5d5d5d;
 }
 
 /* Phần trình bày các khách sạn_nhà hàng */
-.layout_info-hidden {
-    display: none;
+
+.layout_info-active.layout_info-flexcontainer {
+    display: flex;
 }
 
 .layout_info-flexcontainer {
-    display: flex;
+    display: none;
     flex-flow: column wrap;
     justify-content: space-evenly;
     align-items: center;
@@ -162,7 +160,7 @@ body {
 
 .layout_info-price {
     color: #d22929;
-    font-size: clamp(0.5rem, 2.5vw, 2rem);
+    font-size: clamp(0.5rem, 2vw, 2rem);
     font-weight: bold;
     padding: min(0.5vw, 8px);
     text-align: center;
@@ -201,7 +199,7 @@ body {
 }
 
 .layout_info-review-point {
-    font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.5rem, 1.2vw, 1.5rem);
     padding: min(1vw, 32px);
     background-color: #035a90;
     color: white;
@@ -209,7 +207,7 @@ body {
 }
 
 .layout_info-review-word {
-    font-size: clamp(0.25rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.25rem, 1vw, 1.5rem);
 }
 
 .layout_info-button {
@@ -247,7 +245,7 @@ body {
     border: none;
     border-radius: 5px;
     box-shadow: 0 0 5px 1px #dadada;
-    width: min(80vw, 1400px);
+    width: min(85vw, 1400px);
     height: 80vh;
     z-index: 10;
     background-color: white;
@@ -267,11 +265,11 @@ body {
     background-color: #035a90;
     position: sticky;
     top: -1px;
-    z-index: 5;
+    z-index: 20;
 }
 
 .modal_title {
-    font-size: 2rem;
+    font-size: max(1.8rem, 16px);
     font-weight: bold;
     color: #fbc13b;
 }
@@ -283,8 +281,8 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: #ffffff;
-    width: 2em;
-    height: 2em;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .modal_close-button:hover {
@@ -360,7 +358,7 @@ body {
 }
 
 .modal_description>h4 {
-    font-size: min(3vw, 2rem);
+    font-size: min(2.5vw, 1.8rem);
 }
 
 .modal_description>p {
@@ -372,16 +370,15 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border-radius: 5px;
     gap: 10px;
 }
 
 .modal_address>h4 {
-    font-size: min(3vw, 2rem);
+    font-size: min(2.5vw, 1.8rem);
 }
 
 .modal_address>p {
-    font-size: min(1.5vw, 1rem);
+    font-size: min(2vw, 1rem);
 }
 
 .modal_address>p::before {
@@ -394,7 +391,8 @@ body {
 
 .modal_address-map {
     width: 100%;
-    height: 70%;
+    height: clamp(150px,30vw,300px);
+    z-index: 3 !important;
 }
 
 .modal_review {
@@ -439,7 +437,7 @@ body {
 }
 
 .modal_facilities>h4 {
-    font-size: min(3vw, 2rem);
+    font-size: min(2.5vw, 1.8rem);
 }
 
 .modal_facilities-price {
@@ -473,7 +471,7 @@ body {
 }
 
 .modal_contacts>h4 {
-    font-size: min(3vw, 2rem);
+    font-size: min(2.5vw, 1.8rem);
 }
 
 #overlay {
@@ -600,17 +598,19 @@ body {
 /*mobile responsive*/
 @media (max-width: 600px) {
     .layout_info-flexcontainer {
-        display: flex;
+        display: none;
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
         padding: 5px;
         gap: 10px;
     }
-
+    .layout_info-active.layout_info-flexcontainer {
+        display: flex;
+    }
     .layout_info-card {
-        height: clamp(100px, 50vw, 150px);
-        width: max(45%, 200px);
+        height: clamp(120px, 45vw, 160px);
+        width: 200px;
         display: flex;
         flex-flow: column;
         justify-content: flex-start;
@@ -668,11 +668,10 @@ body {
     .modal_add-rv-description {
         display: grid;
         grid-template-areas:
-            'address review'
-            'description description';
+            'description review'
+            'address address';
         grid-template-columns: 50% 50%;
         grid-template-rows: auto auto;
-        gap: 10px;
     }
 
     .modal_description {
@@ -685,7 +684,6 @@ body {
         display: flex;
         flex-direction: column;
         padding: 10px;
-        border-radius: 5px;
         gap: 10px;
     }
 
@@ -695,7 +693,6 @@ body {
         display: flex;
         align-items: center;
         gap: 10px;
-        border-left: 2px solid #f1f1f1;
         border-bottom: none;
     }
 }
