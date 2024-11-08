@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../js/page.js" defer></script>
+    <script src="../js/assets.js" defer></script>
+    <script src="../js/hotel.js" defer></script>
+    <script src="../js/bookingForm.js" defer></script>
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="../css/hotel.css">
+    <link rel="stylesheet" href="../css/bookingForm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <title>Can Tho Travel</title>
+</head>
+
+<body class="page">
+    <div id="loader" class="page-loading">
+        <img src="../images/page-loading.gif" alt="" class="page-loading__img">
+        <h3>Loading...</h3>
+    </div>
+    <header class="page-header" id="header"></header>
+    <main class="page-main hotel">
+        <div id="layout">
+            <section id="layout_head" class="layout_head-flexcontainer">
+                <button class="layout_head-button button_clicked">HOTELS</button>
+                <button class="layout_head-button">RESTAURANTS</button>
+            </section>
+            <section id="layout_info">
+                <div id="layout_info-hotel" >
+                    <div class="layout_info-flexcontainer layout_info-active">
+                        <!-- fetch hotel data -->
+                    </div>
+                </div>
+                <div id="layout_info-restaurant" >
+                    <div class="layout_info-flexcontainer">
+                        <!-- fetch restaurant data -->
+                    </div>
+                </div>
+            </section>
+            <!------------------Hotel and restaurant modal will be automated load into here-------------------->
+            <div id="overlay"></div>
+
+        </div>
+
+        <!--------------------Booking modal------------------------>
+        <div class="modal booking" id="booking-hotel">
+            <div class="modal_booking-header">
+                <img src="../images/Hotel img/booking hotel.png" class="modal_booking-img">
+                <h3 class="modal_booking-title">Hotel reservation</h3>
+                <div class="modal_booking-logo">
+                    <img src="../images/logo.png" class="modal_booking-logo-img">
+                    <p>Travel Cantho</p>
+                </div>
+            </div>
+            <div class="modal_booking-content">
+                <form onsubmit="handleBookingHotelButton(event)">
+                    <ul class="modal_booking-form">
+                        <li class="modal_booking-form-hotel">
+                            <label for="hotel" class="modal_booking-content-title">Hotel</label><br>
+                            <input type="text" id="hotelName" name="hotel" class="hotel_res-name" readonly />
+                        </li>
+                        <li class="modal_booking-form-name">
+                            <label for="name" class="modal_booking-content-title">Full Name</label>
+                            <div>
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name"
+                                    class="modal_booking-name-input" required />
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name"
+                                    class="modal_booking-name-input" required />
+                            </div>
+                        </li>
+                        <li class="modal_booking-form-gender">
+                            <h4 class="modal_booking-content-title">Gender</h4>
+                            <select id="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </li>
+                        <li class="modal_booking-form-phone">
+                            <label for="phone" class="modal_booking-content-title">Phone number</label><br>
+                            <input type="tel" id="phone" name="phone" required placeholder="84989xxxxxx" />
+                        </li>
+                        <li class="modal_booking-form-email">
+                            <label for="email" class="modal_booking-content-title">Email</label> <br>
+                            <input type="email" id="email" name="email" placeholder="abc@gmail.com" required />
+                        </li>
+                        <li class="modal_booking-form-room-type">
+                            <label for="roomType" class="modal_booking-content-title">Room type</label>
+                            <select id="roomType" name="roomId" class="select__room-type" required>
+                            </select>
+                        </li>
+                        <li class="modal_booking-form-date">
+                            <div>
+                                <label for="check-in-date" class="modal_booking-content-title"> Check-in date</label>
+                                <input type="date" id="checkInDate" name="checkInDate" required />
+                            </div>
+                            <div><label for="check-out-date" class="modal_booking-content-title"> Check-out date</label>
+                                <input type="date" id="checkOutDate" name="checkOutDate" required />
+                            </div>
+                        </li>
+                        <li class="modal_booking-form-number">
+                            <div>
+                                <label for="adults" class="modal_booking-content-title">No. Adults</label><br>
+                                <input type="number" id="numOfAdults" name="numOfAdults" min="1" required />
+                            </div>
+                            <div>
+                                <label for="children" class="modal_booking-content-title">No. Children</label><br>
+                                <input type="number" id="numOfChildren" name="numOfChildren" min="0" />
+                            </div>
+                        </li>
+                        <li class="modal_booking-form-request">
+                            <label for="requests" class="modal_booking-content-title">Special requests:</label><br>
+                            <textarea id="specialRequests" name="specialRequest" rows="4"></textarea>
+                        </li>
+                    </ul>
+                    <div class="modal_booking-button-container">
+                        <button type="submit" class="modal_booking-button submit_button">Book now</button>
+                        <button type="button" data-close-button class="modal_booking-button">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Restaurant booking-->
+        <div class="modal booking" id="booking-restaurant">
+            <div class="modal_booking-header">
+                <img src="../images/Restaurants_img/Resraurant_booking.png" class="modal_booking-img">
+                <h3 class="modal_booking-title">Restaurant reservation</h3>
+                <div class="modal_booking-logo">
+                    <img src="../images/logo.png" class="modal_booking-logo-img">
+                    <p>Travel Cantho</p>
+                </div>
+            </div>
+            <div class="modal_booking-content">
+                <form onsubmit="handleBookingRestaurantButton(event)">
+                    <ul class="modal_booking-form">
+                        <li class="modal_booking-form-hotel">
+                            <label for="hotel" class="modal_booking-content-title">Restaurant</label><br>
+                            <input type="text" id="restaurantName" name="hotel" class="hotel_res-name" readonly />
+                        </li>
+                        <li class="modal_booking-form-name">
+                            <label for="name" class="modal_booking-content-title">Full Name</label>
+                            <div>
+                                <input type="text" id="firstNameRes" name="firstName" placeholder="First name"
+                                    class="modal_booking-name-input" required />
+                                <input type="text" id="lastNameRes" name="lastName" placeholder="Last name"
+                                    class="modal_booking-name-input" required />
+                            </div>
+                        </li>
+                        <li class="modal_booking-form-gender">
+                            <h4 class="modal_booking-content-title">Gender</h4>
+                            <select id="genderRes" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </li>
+                        <li class="modal_booking-form-phone">
+                            <label for="phone_number" class="modal_booking-content-title">Phone number</label><br>
+                            <input type="tel" id="phoneRes" name="phone" required placeholder="84989xxxxxx" />
+                        </li>
+                        <li class="modal_booking-form-email">
+                            <label for="email" class="modal_booking-content-title">Email</label> <br>
+                            <input type="email" id="emailRes" name="email" placeholder="abc@gmail.com" required />
+                        </li>
+                        <li class="modal_booking-form-date">
+                            <div>
+                                <label for="arrival-date" class="modal_booking-content-title"> Arrival date</label>
+                                <input type="date" id="arrivalDate" name="arrival-date" required />
+                            </div>
+                            <div>
+                                <label for="check-in-time" class="modal_booking-content-title"> Check-in time</label>
+                                <input type="time" id="checkInTime" name="check-in-time" required />
+                            </div>
+                        </li>
+                        <li class="modal_booking-form-number">
+                            <div>
+                                <label for="adults" class="modal_booking-content-title">No. Adults</label><br>
+                                <input type="number" id="numOfAdultsRes" name="adults" min="1" required />
+                            </div>
+                            <div>
+                                <label for="children" class="modal_booking-content-title">No. Children</label><br>
+                                <input type="number" id="numOfChildrenRes" name="children" min="0" />
+                            </div>
+                        </li>
+                        <li class="modal_booking-form-request">
+                            <label for="requests" class="modal_booking-content-title">Special requests:</label><br>
+                            <textarea id="specialRequestsRes" name="requests" rows="4"></textarea>
+                        </li>
+                    </ul>
+                    <div class="modal_booking-button-container">
+                        <button type="submit" class="modal_booking-button submit_button">Book now</button>
+                        <button type="button" data-close-button class="modal_booking-button">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Success modal-->
+        <div id="overlay2"></div>
+        <div class=" modal_success" id="Success_card">
+            <section class="modal_success-flex-container">
+                <img src="../images/logo.png" class="modal_success-img">
+                <h4>Successfully booking</h4>
+                <p>Please wait a few minutes for us to call you to confirm your booking</p>
+            </section>
+        </div>
+        <!--Loading modal-->
+        <div class="modal_loader" id="loading_card">
+            <div class="loader"></div>
+            <h4>sending</h4>
+        </div>
+        </div>
+    </main>
+    <footer class="page-footer" id="footer"></footer>
+</body>
+
+</html>
