@@ -1,4 +1,3 @@
-
 /* Layout tổng của web */
 #layout {
     display: grid;
@@ -55,6 +54,7 @@
 }
 
 /* Phần trình bày các khách sạn_nhà hàng */
+
 .layout_info-active.layout_info-flexcontainer {
     display: flex;
 }

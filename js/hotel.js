@@ -1,6 +1,7 @@
 const buttons = document.getElementsByClassName('layout_head-button');
 const buttonData = document.querySelectorAll('#layout_info > div > div');
 
+
 //Fetch hotel 
 (function fetchHotel() {
     hotelData.map((item) => {
@@ -97,7 +98,9 @@ const buttonData = document.querySelectorAll('#layout_info > div > div');
                         <section class="modal_address">
                             <h4>Address</h4>
                             <p>${item.address}</p>
+
                             <div id="map-${item.id}" class="modal_address-map"></div>
+
                         </section>
                         <section class="modal_review">
                             <h3 class="modal_review-point">${item.point}/10</h4>
@@ -125,6 +128,7 @@ const buttonData = document.querySelectorAll('#layout_info > div > div');
             </div>
             `
         );
+
         const mapContainer = document.getElementById(`map-${item.id}`);
         const map = L.map(mapContainer).setView([item.lat,item.long], 16);
 
@@ -135,6 +139,7 @@ const buttonData = document.querySelectorAll('#layout_info > div > div');
         L.marker([item.lat, item.long]).addTo(map)
             .bindPopup(`<b>${item.name}</b><br>${item.layoutAddress}`)
             .openPopup();
+
     });
 })();
 
@@ -170,7 +175,9 @@ const buttonData = document.querySelectorAll('#layout_info > div > div');
                         <section class="modal_address">
                             <h4>Address</h4>
                             <p>${item.address}</p>
+
                              <div id="map-${item.id}" class="modal_address-map"></div>
+
                         </section>
                         <section class="modal_review">
                             <h3 class="modal_review-point">${item.point}/10</h3>
@@ -199,6 +206,7 @@ const buttonData = document.querySelectorAll('#layout_info > div > div');
             </div>
             `
         );
+
         const mapContainer = document.getElementById(`map-${item.id}`);
         const map = L.map(mapContainer).setView([item.lat,item.long], 16);
 
@@ -209,18 +217,22 @@ const buttonData = document.querySelectorAll('#layout_info > div > div');
         L.marker([item.lat, item.long]).addTo(map)
             .bindPopup(`<b>${item.name}</b><br>${item.layoutAddress}`)
             .openPopup();
+
     });
 })();
 
 //Ẩn hiện nội dung các button
 Array.from(buttons).forEach((button, i) => {
     button.addEventListener('click', () => {
+
         buttonData.forEach((data) => {
             data.classList.remove('layout_info-active');
+
         });
         buttonData[i].classList.add('layout_info-active'); // Đảm bảo chính tả đúng
     });
 });
+
 //Đổi màu nút sau khi click
 Array.from(buttons).forEach((button, i) => {
     button.addEventListener('click', function (event) {

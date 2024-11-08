@@ -4,13 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css//header.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="../js/header.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/page.css">
     <title>Can Tho Travel</title>
 </head>
 
 <body>
     <header class="header">
-        HEADER
+        <div class="header__logo">
+            <img src="../images/logo.png" alt="">
+        </div>
+        <ul class="header__navigate-bar">
+            <li><a href="../pages/homepage.html">Home</a></li>
+            <li><a href="../pages/destination.html">Places to go</a></li>
+            <li><a href="../pages/hotel.html">Hotel & Restaurant</a></li>
+            <li><a href="../pages/weatherForecast.html">Weather forecast</a></li>
+        </ul>
+        <div class="header__search-bar">
+            <input type="text" class="header_input" placeholder="Search here">
+            <i class="fas fa-search header__search-icon"></i>
+        </div>
+        <div class="header__menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <ul class="header__dropdown-menu ">
+            <li><a href="../pages/homepage.html">Homepage</a></li>
+            <li><a href="../pages/destination.html">Places to go</a></li>
+            <li><a href="../pages/hotel.html">Hotel & Restaurant</a></li>
+            <li><a href="../pages/weatherForecast.html">Weather forecast</a></li>
+        </ul>
     </header>
 </body>
 
